@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/imgs/72992708.jpg">
+    <title>🌿 ・ Jisll</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+
+</head>
+<body>
+    <section class="main">
+        <img src="assets/imgs/72992708.jpg">
+        <span>Jisll</span>
+        <p>Front-End & Back-End Developer</p>
+        <ul>
+            <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
+            <li><a target="_blank" href="https://github.com/Jisll"><i class="fab fa-github"></i></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i class="fab fa-youtube"></i></a></li>
+        </ul>                   
+    </section>
+    <script>
+    document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.keyCode == 123 ||
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+        (e.ctrlKey && e.keyCode == 85)
+    ) {
+        e.preventDefault();
+    }
+});
+
+function generateRainingEmojis() {
+    const numberOfEmojis = 100;
+    
+    const emojis = [
+        { emoji: "❤️", probability: 0.03 },
+        { emoji: "💙", probability: 0.03 },
+        { emoji: "💚", probability: 0.03 },
+        { emoji: "💛", probability: 0.03 },
+        { emoji: "🤍", probability: 0.03 },
+        { emoji: "🤎", probability: 0.03 },
+        { emoji: "🧡", probability: 0.03 },
+        { emoji: "💜", probability: 0.03 }
+    ];
+
+    for (let i = 0; i < numberOfEmojis; i++) {
+        let emojiSpan = document.createElement("span");
+        emojiSpan.classList.add("emoji-rain");
+                let randomNum = Math.random();
+        let sum = 0;
+        for (let j = 0; j < emojis.length; j++) {
+            sum += emojis[j].probability;
+            if (randomNum < sum) {
+                emojiSpan.textContent = emojis[j].emoji;
+                break;
+            }
+        }
+        emojiSpan.style.left = Math.random() * window.innerWidth + 'px';
+        emojiSpan.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(emojiSpan);
+    }
+}
+
+generateRainingEmojis();
+    </script>
+</body>
+</html>
