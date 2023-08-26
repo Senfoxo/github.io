@@ -112,6 +112,7 @@ ul li {
     overflow: hidden;
     border-right: 2px solid rgba(255, 255, 255, .75);
     animation: typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal;
+    animation-delay: 3s;
 }
 
 .main ul {
