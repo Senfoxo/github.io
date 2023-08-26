@@ -42,32 +42,35 @@ document.addEventListener('keydown', function(e) {
 
 function generateRainingEmojis() {
     const numberOfEmojis = 100;
-    
     const emojis = [
-        { emoji: "❤️", probability: 0.03 },
-        { emoji: "💙", probability: 0.03 },
-        { emoji: "💚", probability: 0.03 },
-        { emoji: "💛", probability: 0.03 },
-        { emoji: "🤍", probability: 0.03 },
-        { emoji: "🤎", probability: 0.03 },
-        { emoji: "🧡", probability: 0.03 },
-        { emoji: "💜", probability: 0.03 }
+        { emoji: "🖤", probability: 0.1 },
+        { emoji: "🤍", probability: 0.1 },
     ];
+
+    let windowWidth = window.innerWidth;
+    let slotWidth = windowWidth / numberOfEmojis;
 
     for (let i = 0; i < numberOfEmojis; i++) {
         let emojiSpan = document.createElement("span");
         emojiSpan.classList.add("emoji-rain");
-                let randomNum = Math.random();
+
+        let randomNum = Math.random();
         let sum = 0;
         for (let j = 0; j < emojis.length; j++) {
             sum += emojis[j].probability;
-            if (randomNum < sum) {
+            if (randomNum <= sum) {
                 emojiSpan.textContent = emojis[j].emoji;
                 break;
             }
         }
-        emojiSpan.style.left = Math.random() * window.innerWidth + 'px';
-        emojiSpan.style.animationDelay = Math.random() * 5 + 's';
+
+        // Bestimme den `left`-Wert zufällig innerhalb des zugeordneten Slots
+        let leftPosition = (slotWidth * i) + (Math.random() * slotWidth);
+        emojiSpan.style.left = leftPosition + 'px';
+
+        let randomDelay = Math.random() * 5;
+        emojiSpan.style.animationDelay = randomDelay + 's';
+
         document.body.appendChild(emojiSpan);
     }
 }
