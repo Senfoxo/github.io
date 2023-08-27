@@ -11,6 +11,10 @@
 
 </head>
 <body>
+    <div class="custom-cursor">
+        <div class="cursor-point"></div>
+        <div class="cursor-border"></div>
+    </div>    
     <section class="main">
         <img src="assets/imgs/72992708.jpg">
         <span>Jisll</span>
@@ -43,17 +47,17 @@ document.addEventListener('keydown', function(e) {
 function generateRainingEmojis() {
     const numberOfEmojis = 100;
     const emojis = [
-        { emoji: "🖤", probability: 0.1 },
-        { emoji: "🤍", probability: 0.1 },
+    { emoji: "J", probability: 0.1 },
+{ emoji: "I", probability: 0.1 },
+{ emoji: "S", probability: 0.1},
+{ emoji: "L", probability: 0.1},
+{ emoji: "L", probability: 0.1 },
     ];
-
     let windowWidth = window.innerWidth;
     let slotWidth = windowWidth / numberOfEmojis;
-
     for (let i = 0; i < numberOfEmojis; i++) {
         let emojiSpan = document.createElement("span");
         emojiSpan.classList.add("emoji-rain");
-
         let randomNum = Math.random();
         let sum = 0;
         for (let j = 0; j < emojis.length; j++) {
@@ -63,25 +67,43 @@ function generateRainingEmojis() {
                 break;
             }
         }
-
-        // Bestimme den `left`-Wert zufällig innerhalb des zugeordneten Slots
         let leftPosition = (slotWidth * i) + (Math.random() * slotWidth);
         emojiSpan.style.left = leftPosition + 'px';
-
         let randomDelay = Math.random() * 5;
         emojiSpan.style.animationDelay = randomDelay + 's';
-
         document.body.appendChild(emojiSpan);
     }
 }
-
 generateRainingEmojis();
 
 window.addEventListener('scroll', function() {
     window.scrollTo(0, 0);
 });
-
 document.body.style.overflow = "hidden";
+
+const point = document.querySelector('.cursor-point');
+const border = document.querySelector('.cursor-border');
+let mouseX = 0;
+let mouseY = 0;
+let borderX = 0;
+let borderY = 0;
+const smoothness = 0.05;
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    point.style.left = mouseX + 'px';
+    point.style.top = mouseY + 'px';
+});
+function animate() {
+    borderX += (mouseX - borderX) * smoothness;
+    borderY += (mouseY - borderY) * smoothness;
+    
+    border.style.left = `${borderX}px`;
+    border.style.top = `${borderY}px`;
+
+    requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
     </script>
 </body>
 </html>

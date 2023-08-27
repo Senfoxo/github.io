@@ -10,13 +10,13 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(145deg, #16161a, #202025);
+    background: linear-gradient(145deg, #000000, #1d003f);
     color: #fffffe;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    cursor: default;
+    cursor: none;
     overflow: hidden;
 }
 
@@ -49,7 +49,7 @@ ul li {
     font-size: 20px;
     opacity: 0.7;
     animation: rain linear infinite;
-    color: #fffffe;
+    color: #8c00ff;
     z-index: -1;
 }
 
@@ -89,13 +89,12 @@ ul li {
     height: 150px;
     border-radius: 100%;
     object-fit: cover;
-    border: 10px solid #21222b93;
-    cursor: pointer;
+    border: 10px solid #26212b93;
     transition: transform 0.3s ease;
 }
 
 .main img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .main span {
@@ -111,7 +110,7 @@ ul li {
     max-width: fit-content;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid rgba(255, 255, 255, .75);
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
     animation: typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal;
     animation-delay: 3s;
 }
@@ -126,6 +125,7 @@ ul li {
     font-size: 25px;
     margin: 0 15px;
     transition: color 0.3s ease;
+    cursor: none;
 }
 
 .main li a:hover i {
@@ -188,4 +188,43 @@ ul li {
     80% { transform: translate(-0.5px, -0.5px) rotate(0.5deg); }
     90% { transform: translate(0.5px, 1px) rotate(0deg); }
     100% { transform: translate(0.5px, -0.5px) rotate(-0.5deg); }
+}
+
+:root {
+    --mouse-x: 0px;
+    --mouse-y: 0px;
+}
+  
+  .custom-cursor {
+      position: fixed;
+      top: var(--mouse-y);
+      left: var(--mouse-x);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: top 0.05s ease, left 0.05s ease;
+}
+  
+  .cursor-point {
+      width: 7.5px;
+      height: 7.5px;
+      background-color: #8c00ff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
+}
+  
+  .cursor-border {
+      width: 30px;
+      height: 30px;
+      background-color: #8c00ff3b;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      will-change: transform;
 }
