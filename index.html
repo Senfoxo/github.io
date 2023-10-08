@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/imgs/72992708.jpg">
-    <title>🌿 ・ Jisll</title>
+    <title>🍂 ・ Jisll</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
 
@@ -16,15 +16,20 @@
         <div class="cursor-border"></div>
     </div>    
     <section class="main">
-        <img src="assets/imgs/72992708.jpg">
+        <img src="assets/imgs/72992708.jpeg">
         <span>Jisll</span>
+        <span class="small-text">(𝔐𝔞𝔲𝔯𝔦𝔠𝔢)</span>
         <p>Front-End & Back-End Developer</p>
         <ul>
             <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/Jisll"><i class="fab fa-github"></i></a></li>
             <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i class="fab fa-youtube"></i></a></li>
-        </ul>                   
+        </ul>            
     </section>
+    <div class="made-with-love">
+        Made With Love By Jisll <i class="fas fa-heart"></i>
+    </div>
+    
     <script>
     document.addEventListener('selectstart', function(e) {
     e.preventDefault();
@@ -80,7 +85,6 @@ window.addEventListener('scroll', function() {
     window.scrollTo(0, 0);
 });
 document.body.style.overflow = "hidden";
-
 const point = document.querySelector('.cursor-point');
 const border = document.querySelector('.cursor-border');
 let mouseX = 0;
@@ -104,6 +108,16 @@ function animate() {
     requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+
+    images.forEach(function(image) {
+        image.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    });
+});
     </script>
 </body>
 </html>
