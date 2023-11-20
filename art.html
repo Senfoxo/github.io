@@ -15,13 +15,7 @@
 }
 
 .img-wrapper img:hover {
-    animation: colorize 0.5s forwards;
-}
-
-@keyframes colorize {
-    0% { filter: grayscale(100%); }
-    50% { filter: grayscale(50%); }
-    100% { filter: grayscale(0%); }
+    filter: grayscale(0%);
 }
 
 .img-wrapper img:not(:hover) {
