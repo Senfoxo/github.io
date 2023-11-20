@@ -10,8 +10,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(145deg, #000000, #e1c39f);
-    color: #160605;
+    background: linear-gradient(145deg, #000000, #c6293d);
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@ ul li {
     font-size: 20px;
     opacity: 0.7;
     animation: rain linear infinite;
-    color: #2a0b09;
+    color: #ffffff;
     z-index: -1;
 }
 
@@ -104,13 +104,13 @@ ul li {
 }
 
 .main p {
-    color: #2a0b09;
+    color: #ffffff;
     font-size: 13px;
     position: relative;
     max-width: fit-content;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid rgba(22, 6, 5, 0.75);
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
     animation: typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal;
     animation-delay: 3s;
     margin-top: 10px;
@@ -122,7 +122,7 @@ ul li {
 }
 
 .main li a {
-    color: #2a0b09;
+    color: #ffffff;
     font-size: 25px;
     margin: 0 15px;
     transition: color 0.3s ease;
@@ -143,7 +143,7 @@ ul li {
 
 .main li a[href*="github"]:hover i {
     filter: grayscale(0%);
-    color: #ffffff;
+    color: #696969;
 }
 
 .main li a[href*="youtube"]:hover i {
@@ -176,7 +176,7 @@ ul li {
 
 @keyframes blinkTextCursor {
     0%, 100% {
-        border-right-color: rgba(22, 6, 5, 0.75);
+        border-right-color: rgba(255, 255, 255, 0.75);
     }
     50% {
         border-right-color: transparent;
@@ -201,7 +201,7 @@ ul li {
   .cursor-point {
       width: 7.5px;
       height: 7.5px;
-      background-color: #2a0b09;
+      background-color: #ffffff;
       border-radius: 50%;
       position: absolute;
       top: 50%;
@@ -213,7 +213,7 @@ ul li {
   .cursor-border {
       width: 30px;
       height: 30px;
-      background-color: #2a0b0944;
+      background-color: #ffffff44;
       border-radius: 50%;
       position: absolute;
       top: 50%;
@@ -237,4 +237,5 @@ section.main .small-text {
     font-size: 15px; 
     margin-top: -13px; 
     font-family: 'Arial', sans-serif;
+    color: rgba(255, 255, 255, 0.733);
 }

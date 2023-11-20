@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/imgs/72992708.jpg">
+    <title>🍁 ・ Jisll</title>
+    <link rel="stylesheet" href="styleart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+    <style>
+.img-wrapper img {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.img-wrapper img:hover {
+    animation: colorize 0.5s forwards;
+}
+
+@keyframes colorize {
+    0% { filter: grayscale(100%); }
+    50% { filter: grayscale(50%); }
+    100% { filter: grayscale(0%); }
+}
+
+.img-wrapper img:not(:hover) {
+    animation: decolorize 0.5s forwards;
+}
+
+@keyframes decolorize {
+    0% { filter: grayscale(0%); }
+    50% { filter: grayscale(50%); }
+    100% { filter: grayscale(100%); }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(5em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img-wrapper {
+    opacity: 0;
+    animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 3s;
+}
+
+h1, h2 {
+    opacity: 0;
+    animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 3s;
+}
+
+        nav ul {
+            position: absolute;
+            top: 0;
+            right: 0;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.336)
+}
+    </style>
+</head>
+<body>
+    <div class="custom-cursor">
+        <div class="cursor-point"></div>
+        <div class="cursor-border"></div>
+    </div>    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="art.html">Art</a></li>
+        </ul>
+    </nav>
+    <div id="art-gallery">
+        <h1>Art Gallery</h1>
+        <h2>Gaming</h2>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/jisllgta5.png" alt="Art Image 1">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/valoranthaze.jpeg" alt="Art Image 2">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/gta5.jpeg" alt="Art Image 3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/germanr6.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/controller.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <h2>Nature</h2>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/nuint.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/naturewild.jpeg" alt="Art Image 5">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/nautrebear.jpeg" alt="Art Image 6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/bear.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/dog.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <h2>Series/Films</h2>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/spongebob.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/spongebobbaby.jpeg" alt="Art Image 5">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/spongebobpurplehaze.jpeg" alt="Art Image 6">
+            </div>
+        </div>
+        <h2>Cars</h2>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/mustang.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/porsche.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/bmw.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/jaguar.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/audi.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/lamborghini.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/astonmartin.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/tesla.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <h2>Logo Designs</h2>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/DLogo.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/ALogo.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/MLogo.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/MYLogo.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/QRLogo.jpeg" alt="Art Image 4">
+            </div>
+            <div class="img-wrapper">
+                <img src="assets/imgs/veganlogo.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="img-wrapper">
+                <img src="assets/imgs/orangebeer.jpeg" alt="Art Image 4">
+            </div>
+        </div>
+    </div>   
+    <script>
+    document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.keyCode == 123 ||
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+        (e.ctrlKey && e.keyCode == 85)
+    ) {
+        e.preventDefault();
+    }
+});
+
+function generateRainingEmojis() {
+    const numberOfEmojis = 200;
+    const emojis = [
+    { emoji: "A", probability: 0.1 },
+{ emoji: "R", probability: 0.1 },
+{ emoji: "T", probability: 0.1},
+    ];
+    let windowWidth = window.innerWidth;
+    let slotWidth = windowWidth / numberOfEmojis;
+    for (let i = 0; i < numberOfEmojis; i++) {
+        let emojiSpan = document.createElement("span");
+        emojiSpan.classList.add("emoji-rain");
+        let randomNum = Math.random();
+        let sum = 0;
+        for (let j = 0; j < emojis.length; j++) {
+            sum += emojis[j].probability;
+            if (randomNum <= sum) {
+                emojiSpan.textContent = emojis[j].emoji;
+                break;
+            }
+        }
+        let leftPosition = (slotWidth * i) + (Math.random() * slotWidth);
+        emojiSpan.style.left = leftPosition + 'px';
+        let randomDelay = Math.random() * 5;
+        emojiSpan.style.animationDelay = randomDelay + 's';
+        document.body.appendChild(emojiSpan);
+    }
+}
+generateRainingEmojis();
+
+const point = document.querySelector('.cursor-point');
+const border = document.querySelector('.cursor-border');
+let mouseX = 0;
+let mouseY = 0;
+let borderX = 0;
+let borderY = 0;
+const smoothness = 0.05;
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    point.style.left = mouseX + 'px';
+    point.style.top = mouseY + 'px';
+});
+function animate() {
+    borderX += (mouseX - borderX) * smoothness;
+    borderY += (mouseY - borderY) * smoothness;
+    
+    border.style.left = `${borderX}px`;
+    border.style.top = `${borderY}px`;
+
+    requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+
+    images.forEach(function(image) {
+        image.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    });
+});
+    </script>
+</body>
+</html>
