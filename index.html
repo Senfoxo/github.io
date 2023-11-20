@@ -56,7 +56,10 @@ nav ul li a:hover {
             <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/Jisll"><i class="fab fa-github"></i></a></li>
             <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i class="fab fa-youtube"></i></a></li>
-        </ul>            
+        </ul>
+        <div class="fact">
+            <p></p>
+          </div>              
     </section>
     <div class="made-with-love">
         Made With Love By Jisll <i class="fas fa-heart"></i>
@@ -150,6 +153,96 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const facts = [
+  "This Website is more than sexy... 😏",
+  "I love my girlfriend Ylva... ❤️",
+  "Cristiano Ronaldo is better than Lionel Messi 😏",
+  "Did you know that the Eiffel Tower grows in the summer? 😮",
+  "Did you know that the first oranges weren’t orange? 🍊😲",
+  "Did you know that some cats are allergic to humans? 😿",
+  "Did you know that a chef's hat has exactly 100 pleats? 👨‍🍳😃",
+  "Did you know that an octopus has three hearts? 🐙❤️❤️❤️",
+  "The Kassel Huskies are a DEL2 ice hockey team from Kassel 🏒🐺",
+  "Did you know basketball used a soccer ball? 🏀⚽😯",
+  "Football was invented in China around 476 B.C ⚽🇨🇳",
+  "Kassel Huskies nickname is 'Die Schlittenhunde' 🐺🛷",
+  "Basketball used a soccer ball 🏀⚽",
+  "Basketball was played in 1891 🏀📅",
+  "NBA was founded in 1946 🏀🎉",
+  "First FIFA World Cup was in 1930 ⚽🏆📅",
+  "Brazil has won 5 World Cup titles ⚽🏆🇧🇷",
+  "Fastest goal was scored in 11 seconds ⚽⏱️",
+  "Highest scoring game was Austria vs Switzerland ⚽🇦🇹🇨🇭",
+  "Longest football match lasted 108 hours ⚽⏱️",
+  "Largest snowflake measured 15 inches ❄️📏",
+  "Honey never spoils 🍯😋",
+  "Day on Venus is longer than a year 🌑🌞",
+  "Shortest war lasted 38 minutes ⏱️⚔️",
+  "Longest place name is in New Zealand 🗺️🇳🇿",
+  "Longest word in English is the chemical name for titin 🧪📚",
+  "Philipp Lahm once went 13 months without committing a single foul. ⚽👏",
+  "Diego Maradona played for Tottenham Hotspur. 🤯⚽",
+  "Bundesliga was founded in 1963 and is comprised of 18 teams. ⚽🇩🇪",
+  "Erling Haaland has scored 20 goals in 13 games for Manchester City! ⚽🔥",
+  "Robert Lewandowski is Poland's greatest ever goalscorer with over 70 goals. ⚽🇵🇱",
+  "Cristiano Ronaldo is the first soccer player billionaire. 💰⚽",
+  "Diego Maradona led the Argentine national team that won the 1986 World Cup. ⚽🏆",
+  "Did you know the first computer bug was an actual bug? 🐞💻",
+  "Did you know the first programming language was Fortran, developed in the 1950s? 👴💻",
+  "Did you know JavaScript was created in just 10 days? ⏱️💻",
+  "First computer bug was a real bug 🐞💻",
+  "Fortran was first programming language 👴💻",
+  "Python named after Monty Python, not snake 🐍📺",
+  "JavaScript created in 10 days ⏱️💻",
+  "'Hello, World!' is first program for beginners 👋🌍",
+  "'null' means no value or reference 🚫",
+  "'IntPtr' represents a pointer or handle 📍",
+  "'boolean' has two values: true or false ✔️❌",
+  "'SQL' manages data in relational databases 🗂️",
+  "'HTML' creates web pages 🌐",
+  "'CSS' describes look and formatting of HTML 🎨",
+  "Java and JavaScript are different ☕📜",
+  "'API' allows programs to communicate 🗣️",
+  "'git' is a version control system 👥💻",
+  "'algorithm' is a set of instructions 📝",
+  "'debugging' is finding and resolving defects 🐜💻",
+  "First computer bug was a real bug 🐞💻",
+  "Fortran was first programming language 👴💻",
+  "Python named after Monty Python, not snake 🐍📺",
+  "JavaScript created in 10 days ⏱️💻",
+  "'Hello, World!' is first program for beginners 👋🌍",
+  "'null' means no value or reference 🚫",
+  "'IntPtr' represents a pointer or handle 📍",
+  "'boolean' has two values: true or false ✔️❌",
+  "'SQL' manages data in relational databases 🗂️",
+  "'HTML' creates web pages 🌐",
+  "'CSS' describes look and formatting of HTML 🎨",
+  "Java and JavaScript are different ☕📜",
+  "'API' allows programs to communicate 🗣️",
+  "'git' is a version control system 👥💻",
+  "'algorithm' is a set of instructions 📝",
+  "'debugging' is finding and resolving defects 🐜💻",
+  "Oldest football club is Sheffield FC, 1857 ⚽🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+];
+let factIndex = 0;
+let p = document.querySelector(".fact p");
+function showNextFact() {
+  let fact = facts[factIndex];
+  p.textContent = fact;
+  factIndex = Math.floor(Math.random() * facts.length);
+}
+function startAnimation() {
+  p.style.animation = 'none';
+  p.offsetHeight;
+  p.style.animation = 'typewriter 12s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal'; 
+}
+function cycleFact() {
+  showNextFact();
+  startAnimation();
+}
+setInterval(cycleFact, 12000);
+cycleFact();
     </script>
 </body>
 </html>
