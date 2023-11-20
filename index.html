@@ -150,7 +150,6 @@ const facts = [
   "Philipp Lahm once went 13 months without committing a single foul. ⚽👏",
   "Diego Maradona played for Tottenham Hotspur. 🤯⚽",
   "Bundesliga was founded in 1963 and is comprised of 18 teams. ⚽🇩🇪",
-  "Erling Haaland has scored 20 goals in 13 games for Manchester City! ⚽🔥",
   "Robert Lewandowski is Poland's greatest ever goalscorer with over 70 goals. ⚽🇵🇱",
   "Cristiano Ronaldo is the first soccer player billionaire. 💰⚽",
   "Diego Maradona led the Argentine national team that won the 1986 World Cup. ⚽🏆",
@@ -191,12 +190,11 @@ const facts = [
   "'debugging' is finding and resolving defects 🐜💻",
   "Oldest football club is Sheffield FC, 1857 ⚽🏴󠁧󠁢󠁥󠁮󠁧󠁿"
 ];
-let factIndex = 0;
 let p = document.querySelector(".fact p");
 function showNextFact() {
+  let factIndex = Math.floor(Math.random() * facts.length);
   let fact = facts[factIndex];
   p.textContent = fact;
-  factIndex = Math.floor(Math.random() * facts.length);
 }
 function startAnimation() {
   p.style.animation = 'none';
