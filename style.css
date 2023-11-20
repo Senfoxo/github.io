@@ -37,71 +37,7 @@ ul li
   align-items: center;
   text-align: center;
   transform: translateY(3em);
-  animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 3s;
-}
-
-@keyframes rain
-{
-  0%
-  {
-    transform: translateY(0);
-  }
-
-  100%
-  {
-    transform: translateY(110vh);
-  }
-}
-
-.emoji-rain
-{
-  position: absolute;
-  top: -10vh;
-  font-size: 20px;
-  opacity: 0.7;
-  animation: rain linear infinite;
-  color: #ffffff;
-  z-index: -1;
-}
-
-.emoji-rain:nth-child(odd)
-{
-  animation-duration: 5s;
-}
-
-.emoji-rain:nth-child(even)
-{
-  animation-duration: 7s;
-}
-
-.rain-emoji
-{
-  position: absolute;
-  font-size: 20px;
-  opacity: 0.7;
-  animation: rain 5s linear infinite;
-  animation-delay: calc(random(1s) * 5s);
-  left: calc(random(100vw));
-}
-
-@keyframes rainingEmojis
-{
-  0%
-  {
-    top: -10%;
-    opacity: 0.5;
-  }
-
-  25%
-  {
-    opacity: 1;
-  }
-
-  100%
-  {
-    top: 110%;
-    opacity: 0.5;
-  }
+  animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
 }
 
 .main img
@@ -258,15 +194,7 @@ ul li
   right: 0;
   text-align: center;
   font-size: 18px;
-  animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 3s;
-}
-
-section.main .small-text
-{
-  font-size: 15px;
-  margin-top: -13px;
-  font-family: 'Arial', sans-serif;
-  color: rgba(255, 255, 255, 0.733);
+  animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
 }
 
 .fact {

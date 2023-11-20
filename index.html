@@ -50,7 +50,6 @@ nav ul li a:hover {
     <section class="main">
         <img src="assets/imgs/nuint.jpeg">
         <span>Jisll</span>
-        <span class="small-text">(nuint)</span>
         <p>Front-End & Back-End Developer</p>
         <ul>
             <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
@@ -62,9 +61,8 @@ nav ul li a:hover {
           </div>              
     </section>
     <div class="made-with-love">
-        Made With Love By Jisll <i class="fas fa-heart"></i>
+        Made With Love By Jisll <i class="fas fa-heart" style="color:#ff4949;"></i>
     </div>
-    
     <script>
     document.addEventListener('selectstart', function(e) {
     e.preventDefault();
@@ -83,38 +81,6 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-
-function generateRainingEmojis() {
-    const numberOfEmojis = 100;
-    const emojis = [
-    { emoji: "J", probability: 0.1 },
-{ emoji: "I", probability: 0.1 },
-{ emoji: "S", probability: 0.1},
-{ emoji: "L", probability: 0.1},
-{ emoji: "L", probability: 0.1 },
-    ];
-    let windowWidth = window.innerWidth;
-    let slotWidth = windowWidth / numberOfEmojis;
-    for (let i = 0; i < numberOfEmojis; i++) {
-        let emojiSpan = document.createElement("span");
-        emojiSpan.classList.add("emoji-rain");
-        let randomNum = Math.random();
-        let sum = 0;
-        for (let j = 0; j < emojis.length; j++) {
-            sum += emojis[j].probability;
-            if (randomNum <= sum) {
-                emojiSpan.textContent = emojis[j].emoji;
-                break;
-            }
-        }
-        let leftPosition = (slotWidth * i) + (Math.random() * slotWidth);
-        emojiSpan.style.left = leftPosition + 'px';
-        let randomDelay = Math.random() * 5;
-        emojiSpan.style.animationDelay = randomDelay + 's';
-        document.body.appendChild(emojiSpan);
-    }
-}
-generateRainingEmojis();
 
 window.addEventListener('scroll', function() {
     window.scrollTo(0, 0);
@@ -235,13 +201,13 @@ function showNextFact() {
 function startAnimation() {
   p.style.animation = 'none';
   p.offsetHeight;
-  p.style.animation = 'typewriter 12s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal'; 
+  p.style.animation = 'typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal'; 
 }
 function cycleFact() {
   showNextFact();
   startAnimation();
 }
-setInterval(cycleFact, 12000);
+setInterval(cycleFact, 9800);
 cycleFact();
     </script>
 </body>
