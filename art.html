@@ -6,73 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🍁 ・ Jisll</title>
     <link rel="stylesheet" href="styleart.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <style>
-.img-wrapper img {
-    filter: grayscale(100%);
-    transition: filter 0.5s ease;
-}
-
-.img-wrapper img:hover {
-    filter: grayscale(0%);
-}
-
-.img-wrapper img:not(:hover) {
-    animation: decolorize 0.5s forwards;
-}
-
-@keyframes decolorize {
-    0% { filter: grayscale(0%); }
-    50% { filter: grayscale(50%); }
-    100% { filter: grayscale(100%); }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(5em);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.img-wrapper {
-    opacity: 0;
-    animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
-}
-
-h1, h2 {
-    opacity: 0;
-    animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
-}
-
-        nav ul {
-            position: absolute;
-            top: 0;
-            right: 0;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        nav ul li {
-            float: left;
-        }
-
-        nav ul li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-nav ul li a:hover {
-    color: rgba(255, 255, 255, 0.336)
-}
+        .img-wrapper img{filter:grayscale(100%);transition:filter .5s ease}.img-wrapper img:hover{filter:grayscale(0%)}@keyframes fadeInUp{0%{opacity:0;transform:translateY(5em)}100%{opacity:1;transform:translateY(0)}}.img-wrapper{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}h1,h2{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}nav ul{position:absolute;top:0;right:0;list-style-type:none;margin:0;padding:0;overflow:hidden}nav ul li{float:left}nav ul li a{display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none}nav ul li a:hover{color:rgba(255,255,255,.336)}
     </style>
 </head>
 <body>
@@ -90,177 +26,67 @@ nav ul li a:hover {
         <h1>Art Gallery</h1>
         <h2>Gaming</h2>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/jisllgta5.png" alt="Art Image 1">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/valoranthaze.jpeg" alt="Art Image 2">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/gta5.jpeg" alt="Art Image 3">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/character29.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/valoranthaze.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/gta5.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/germanr6.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/controller.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/germanr6.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/controller.jpeg" alt="Art Image 2" class="lazy"></div>
         </div>
         <h2>Nature</h2>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/nuint.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/naturewild.jpeg" alt="Art Image 5">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/nautrebear.jpeg" alt="Art Image 6">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/nuint.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/naturewild.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/nautrebear.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/bear.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/dog.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/bear.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/dog.jpeg" alt="Art Image 2" class="lazy"></div>
         </div>
         <h2>Series/Films</h2>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/spongebob.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/spongebobbaby.jpeg" alt="Art Image 5">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/spongebobpurplehaze.jpeg" alt="Art Image 6">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/spongebob.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/spongebobbaby.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/spongebobpurplehaze.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <h2>Cars</h2>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/mustang.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/porsche.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/bmw.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/mustang.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/porsche.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/bmw.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/jaguar.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/audi.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/lamborghini.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/jaguar.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/audi.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/lamborghini.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/astonmartin.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/tesla.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/amgc63.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/astonmartin.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/tesla.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/amgc63.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <h2>Logo Designs</h2>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/DLogo.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/ALogo.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/MLogo.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/DLogo.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/ALogo.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/MLogo.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/MYLogo.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/QRLogo.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/veganlogo.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/MYLogo.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/QRLogo.jpeg" alt="Art Image 2" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/veganlogo.jpeg" alt="Art Image 3" class="lazy"></div>
         </div>
         <div class="row">
-            <div class="img-wrapper">
-                <img src="assets/imgs/orangebeer.jpeg" alt="Art Image 4">
-            </div>
-            <div class="img-wrapper">
-                <img src="assets/imgs/pandora.jpeg" alt="Art Image 4">
-            </div>
+            <div class="img-wrapper"><img data-src="assets/imgs/orangebeer.jpeg" alt="Art Image 1" class="lazy"></div>
+            <div class="img-wrapper"><img data-src="assets/imgs/pandora.jpeg" alt="Art Image 2" class="lazy"></div>
         </div>
-    </div>   
+    </div>  
     <div class="made-with-love">
         Made With Love By Jisll <i class="fas fa-heart" style="color:#ff4949;"></i>
     </div>
     <script>
-    document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-});
-
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-document.addEventListener('keydown', function(e) {
-    if (
-        e.keyCode == 123 ||
-        (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
-        (e.ctrlKey && e.keyCode == 85)
-    ) {
-        e.preventDefault();
-    }
-});
-
-const point = document.querySelector('.cursor-point');
-const border = document.querySelector('.cursor-border');
-let mouseX = 0;
-let mouseY = 0;
-let borderX = 0;
-let borderY = 0;
-const smoothness = 0.05;
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    point.style.left = mouseX + 'px';
-    point.style.top = mouseY + 'px';
-});
-function animate() {
-    borderX += (mouseX - borderX) * smoothness;
-    borderY += (mouseY - borderY) * smoothness;
-    
-    border.style.left = `${borderX}px`;
-    border.style.top = `${borderY}px`;
-
-    requestAnimationFrame(animate);
-}
-requestAnimationFrame(animate);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img');
-
-    images.forEach(function(image) {
-        image.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-        });
-    });
-});
+        document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()});const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}();const i=document.querySelectorAll(".lazy");let c=!1;function a(){if(!c){c=!0;for(let e=0;e<i.length;e++){const t=i[e];if(t.getBoundingClientRect().top<=window.innerHeight&&t.getBoundingClientRect().bottom>=0&&getComputedStyle(t).display!=="none"){t.src=t.dataset.src,t.classList.remove("lazy");const o=()=>{t.removeEventListener("load",o),t.classList.add("loaded")};t.addEventListener("load",o)}}c=!1}}document.addEventListener("scroll",a),a()});
     </script>
 </body>
 </html>

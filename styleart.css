@@ -109,8 +109,8 @@ section.main .small-text
 #art-gallery .row .img-wrapper
 {
   width: 100%;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 350px;
+  max-height: 350px;
   height: auto;
   position: relative;
   overflow: hidden;
