@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 *, *::before, *::after {
@@ -8,6 +8,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
+  font-weight: normal;
   background: linear-gradient(145deg, #000000, #1a1a1a);
   color: #ffffff;
   display: flex;
@@ -20,6 +21,9 @@ body {
 }
 ul li {
   list-style-type: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .main {
   opacity: 0;
@@ -43,6 +47,8 @@ ul li {
 }
 .main span {
   font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
   font-weight: bold;
   margin-top: 20px;
   color: #eeeeee;
@@ -55,6 +61,8 @@ ul li {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 10px;
+  font-family: monospace;
+  letter-spacing: .15em; 
 }
 .main ul {
   display: flex;
@@ -145,6 +153,7 @@ ul li {
   text-align: center;
   font-size: 18px;
   animation: fadeInUp 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
+  text-transform: uppercase;
 }
 .fact {
   margin-top: 20px;
