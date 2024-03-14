@@ -117,12 +117,12 @@ section.main .small-text
 
 #art-gallery .row .img-wrapper img
 {
+  cursor: none;
   width: 100%;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease-in-out;
 }
-
 
 #art-gallery .row .img-wrapper:hover
 {
