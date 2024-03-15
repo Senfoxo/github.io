@@ -6,8 +6,21 @@
     <title>🍁 ・ Jisll</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <style>
         nav ul{position:absolute;top:0;right:0;list-style-type:none;margin:0;padding:0;overflow:hidden}nav ul li{float:left}nav ul li a{display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none}nav ul li a:hover{color:rgba(255,255,255,.336)}
+        p {font-family: 'Poppins', sans-serif;
+        font-weight: 300;}
+        .fact p {
+         font-family: 'Poppins', sans-serif;
+         font-weight: 300;
+         overflow: hidden;
+         border-right: .15em solid rgb(255, 255, 255);
+         white-space: nowrap;
+         margin: 0 auto;
+         letter-spacing: .15em;
+         transition: color 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -18,7 +31,6 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="art.html">Art</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="specs.html">Specs</a></li>
         </ul>
@@ -41,71 +53,71 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()}),window.addEventListener("scroll",()=>window.scrollTo(0,0)),document.body.style.overflow="hidden";const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}(),document.querySelectorAll("img").forEach(e=>{e.addEventListener("dragstart",e=>e.preventDefault())});const i = [
-  "This Website is more than sexy... 😏",
-  "My nationality is 🇨🇿 and 🇩🇪.",
-  "Ada Lovelace, first programmer. 👩‍💻",
-  "First virus in 1983. 🦠",
-  "Binary: You get it or you don't. 🌐",
-  "FORTRAN: First high-level language. 💻",
-  "First 'bug' was a real moth. 🐜",
-  "C language: Modern language precursor. 📚",
-  "Python named after a comedy show. 🐍",
-  "Java was too advanced for its time. ☕",
-  "www.symbolics.com: First domain name. 🌐",
-  "70% of virus writers work for crime syndicates. 🕵️‍♂️",
-  "CAPTCHA: Automated Turing test. 🤖",
-  "Computer users blink less. 👀",
-  "570+ new websites per minute. 🌐",
-  "4004: First Intel microprocessor. 🧠",
-  "1.5 billion internet users. 🌐",
-  "First 1GB hard disk: 550 pounds, $40,000. 💾",
-  "GeForce 6800 Ultra > Pentium 4. 🎮",
-  "First Apple computer from old parts! 🍎",
-  "1 Byte = 8 bits. 💿",
-  "1 KB = 1024 Bytes. 💿",
-  "1 MB = 1024 KB. 💿",
-  "1 GB = 1024 MB. 💿",
-  "1 TB = 1024 GB. 💿",
-  "SQL Injection: Code injection. 💉",
-  "DDoS attack: Network overload. 🌐",
-  "Firewall: Blocks unauthorized access. 🔥",
-  "VPN: Masks IP address. 🎭",
-  "Darknet: Anonymous internet. 🕵️‍♂️",
-  "Phishing: Fraudulent info attempt. 🎣",
-  "Ransomware: Blocks access for ransom. 💰",
-  "Malware: Damages computer systems. 🦠",
-  "Cryptocurrency: Digital currency. 💱",
-  "Blockchain: Linked records. 🔗",
-  "Big Data: Large data sets. 📊",
-  "AI: Human intelligence in machines. 🧠",
-  "Machine Learning: Predictive software. 🤖",
-  "Deep Learning: AI with large data. 🧠",
-  "Neural Network: Algorithms like brain. 🧠",
-  "IoT: Network of physical devices. 🌐",
-  "AR: Enhanced real-world environment. 👓",
-  "VR: Simulated experience. 🕶️",
-  "Quantum Computing: Based on quantum theory. ⚛️",
-  "Grace Hopper invented the first compiler. 👩‍💻",
-  "Alan Turing: Father of computer science. 🧠",
-  "ASCII: Character encoding standard. 🔡",
-  "Unicode: Universal character encoding. 🌐",
-  "Open Source: Collaborative software dev. 🤝",
-  "Linus Torvalds created Linux OS. 🐧",
-  "GitHub: Largest code host platform. 🐙",
-  "Stack Overflow: Q&A for programmers. 💡",
-  "Raspberry Pi: Credit card-sized PC. 💳",
-  "Arduino: Open-source electronics platform. 🤖",
-  "Elon Musk taught himself programming at 12. 🚀",
-  "Bill Gates wrote his first program at 13. 💻",
-  "Ada Lovelace: First computer programmer. 👩‍🔬",
-  "Margaret Hamilton: Apollo 11 software engineer. 🌙",
-  "Grace Hopper: Invented first compiler. 🖥️",
-  "COBOL: First business-oriented language. 💼",
-  "Fortran: First high-level programming language. 🔢",
-  "Lisp: Second-oldest high-level language. 🔗",
-  "BASIC: Beginner's All-purpose Symbolic Instruction Code. 🔤",
-  "Pascal: Named after Blaise Pascal. ⚖️",
-  "Current Specs: i5 10400F, RTX 4070 S, 32GB, 1TB SSD, 4TB HDD 🖥️"
+"This website is hotter than a server room at full capacity… 😏",
+"I’m a delightful blend of 🇨🇿 Czech and 🇩🇪 German cultures.",
+"Ada Lovelace, the original code wizard. 👩‍💻",
+"1983: The year when software caught a cold. 🦠",
+"Binary: It’s a two-way street, you’re either in or you’re out. 🌐",
+"FORTRAN: The granddaddy of programming languages. 💻",
+"The first ‘bug’ was more of a ‘flutter’. 🐜",
+"C language: The cornerstone of modern coding. 📚",
+"Python: A language that gives you a giggle. 🐍",
+"Java: The Marty McFly of its era. ☕",
+"www.symbolics.com: The Neil Armstrong of domain names. 🌐",
+"70% of virus creators are moonlighting for the mob. 🕵️‍♂️",
+"CAPTCHA: The bouncer of the internet. 🤖",
+"Computer users: The staring contest champions. 👀",
+"570+ new corners of the web spun every minute. 🌐",
+"4004: The tiny chip that started a big revolution. 🧠",
+"1.5 billion internet explorers. 🌐",
+"First 1GB hard disk: Weighed more than a baby elephant and cost a small fortune. 💾",
+"GeForce 6800 Ultra: The Usain Bolt of graphics cards. 🎮",
+"First Apple computer: The tech equivalent of Frankenstein’s monster! 🍎",
+"1 Byte = 8 bits. It’s a byte-sized fact! 💿",
+"1 KB = 1024 Bytes. A kilo-byte to bite on. 💿",
+"1 MB = 1024 KB. Mega bytes, mega fun. 💿",
+"1 GB = 1024 MB. Giga bytes, giga possibilities. 💿",
+"1 TB = 1024 GB. A tera-byte of awesomeness. 💿",
+"SQL Injection: The bad kind of shot. 💉",
+"DDoS attack: The internet’s version of a traffic jam. 🌐",
+"Firewall: The bouncer of your computer. 🔥",
+"VPN: The master of disguise. 🎭",
+"Darknet: The internet’s shadowy alleyways. 🕵️‍♂️",
+"Phishing: The con artists of the cyber world. 🎣",
+"Ransomware: The digital hostage-taker. 💰",
+"Malware: The wrecking ball of the digital world. 🦠",
+"Cryptocurrency: The gold rush of the 21st century. 💱",
+"Blockchain: The digital ledger that never lies. 🔗",
+"Big Data: The treasure trove of the digital age. 📊",
+"AI: The brainchild of human intelligence. 🧠",
+"Machine Learning: The crystal ball of software. 🤖",
+"Deep Learning: AI’s deep dive into data. 🧠",
+"Neural Network: The brain’s doppelganger. 🧠",
+"IoT: The invisible threads connecting the world. 🌐",
+"AR: Reality, but better. 👓",
+"VR: Your personal holodeck. 🕶️",
+"Quantum Computing: Harnessing the power of atoms. ⚛️",
+"Grace Hopper: The mother of the compiler. 👩‍💻",
+"Alan Turing: The godfather of computer science. 🧠",
+"ASCII: The Rosetta Stone of computers. 🔡",
+"Unicode: The Babel Fish of the digital world. 🌐",
+"Open Source: Many hands make light work. 🤝",
+"Linus Torvalds: The man who penguin-powered the internet. 🐧",
+"GitHub: The coder’s social network. 🐙",
+"Stack Overflow: The coder’s distress signal. 💡",
+"Raspberry Pi: The computer that fits in your pocket. 💳",
+"Arduino: The DIYer’s best friend. 🤖",
+"Elon Musk: The rocket man of coding. 🚀",
+"Bill Gates: The whizz kid of software. 💻",
+"Ada Lovelace: The visionary of programming. 👩‍🔬",
+"Margaret Hamilton: The woman who took us to the moon. 🌙",
+"Grace Hopper: The woman who taught computers to understand humans. 🖥️",
+"COBOL: The language that means business. 💼",
+"Fortran: The language that started it all. 🔢",
+"Lisp: The elder statesman of coding languages. 🔗",
+"BASIC: The ABCs of coding. 🔤",
+"Pascal: The language that tips its hat to a mathematical genius. ⚖️",
+"Current Specs: i5 10400F, RTX 4070 S, 32GB, 1TB SSD, 4TB HDD. The beast of a machine! 🖥️"
 ];c=document.querySelector(".fact p");function a(){let e=Math.floor(Math.random()*i.length);c.textContent=i[e]}function l(){c.style.animation="none",c.offsetHeight,c.style.animation="typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal"}function d(){a(),l()}setInterval(d,9800),d()});
     </script>
 </body>

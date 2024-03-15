@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -60,19 +61,6 @@ ul li {
   font-weight: bold;
   margin-top: 20px;
   color: #eeeeee;
-  transition: color 0.3s ease-in-out;
-}
-
-.main p {
-  color: #ffffff;
-  font-size: 13px;
-  position: relative;
-  max-width: fit-content;
-  white-space: nowrap;
-  overflow: hidden;
-  margin-top: 10px;
-  font-family: monospace;
-  letter-spacing: .15em; 
   transition: color 0.3s ease-in-out;
 }
 
@@ -180,21 +168,12 @@ ul li {
   animation: fadeInUp 2s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
   text-transform: uppercase;
   transition: color 0.3s ease-in-out;
+  font-weight: bold;
 }
 
 .fact {
   margin-top: 20px;
   text-align: center;
-  transition: color 0.3s ease-in-out;
-}
-
-.fact p {
-  font-family: monospace;
-  overflow: hidden;
-  border-right: .15em solid rgb(255, 255, 255);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
   transition: color 0.3s ease-in-out;
 }
 
