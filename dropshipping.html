@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍁 ・ Jisll</title>
+    <link rel="stylesheet" href="dropshipping.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .img-wrapper img{filter:grayscale(100%);transition:filter .5s ease}.img-wrapper img:hover{filter:grayscale(0%)}@keyframes fadeInUp{0%{opacity:0;transform:translateY(5em)}100%{opacity:1;transform:translateY(0)}}.img-wrapper{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}h1,h2{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}nav ul{position:absolute;top:0;right:0;list-style-type:none;margin:0;padding:0;overflow:hidden}nav ul li{float:left}nav ul li a{display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none}nav ul li a:hover{color:rgba(255,255,255,.336)}
+        .animated-number {
+            font-size: 3em;
+        }
+        .green {
+            color: lightgreen;
+        }
+        .red {
+            color: lightcoral;
+        }
+        #art-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h3 {
+    opacity: 0;
+    animation: fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s;
+}
+h4 {
+
+    opacity: 0;
+    animation: fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s;
+}
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+        }
+
+        .sales-container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%; 
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .sales-item {
+            flex: 1 1 20%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 128, 0.1);
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform .2s, box-shadow .2s, background-color .5s;
+            opacity: 0;
+            transform: translateY(3em);
+            animation: fadeInUp 2s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
+        }
+
+        .sales-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            background-color: rgba(255, 0, 128, 0.1);
+        }
+        .sales-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: -100px;
+}
+
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        .product-sell {
+        color: lightgreen;
+    }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor">
+        <div class="cursor-point"></div>
+        <div class="cursor-border"></div>
+    </div>    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="specs.html">Specs</a></li>
+            <li><a href="dropshipping.html">Dropshipping</a></li>
+        </ul>
+    </nav>
+    <div id="art-gallery">
+        <h1>Dropshipping</h1>
+        <h2>Today's Revenue</h2>
+        <h4>16.03.2024</h4>
+        <h3>Revenue</h3>
+        <h1 class="animated-number green" id="revenue">0</h1>
+        <h3>Loss</h3>
+        <h1 class="animated-number red" id="loss">0</h1>
+        <h3>Profit</h3>
+        <h1 class="animated-number" id="profit">0</h1>
+    </div>
+    <div class="sales-section">
+    <h2>Today's Sales</h2>
+    <div class="sales-container">
+        <div class="sales-item">
+            <h3>RTX 3060</h3>
+            <p class="product-sell">195,49€</p>
+        </div>
+        <div class="sales-item">
+            <h3>GTX 1050 Ti</h3>
+            <p class="product-sell">94,49€</p>
+        </div>
+    <div class="made-with-love">
+        Made With Love By Jisll <i class="fas fa-heart" style="color:#ff4949;"></i>
+    </div>
+    <script>
+function easeOutQuad(t) {
+    return 1 - Math.pow(1 - t, 4);
+}
+
+function animateValue(id, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = range / duration;
+    var obj = document.getElementById(id);
+    var startTime = null;
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = timestamp - startTime;
+        var t = progress / duration;
+        var ease = easeOutQuad(t);
+        current = start + range * ease;
+        if (progress < duration) {
+            obj.innerHTML = current.toFixed(2) + "€";
+            window.requestAnimationFrame(step);
+        } else {
+            obj.innerHTML = end.toFixed(2) + "€";
+        }
+    }
+    window.requestAnimationFrame(step);
+}
+
+function updateData() {
+    var githubUrl = "https://raw.githubusercontent.com/Senfoxo/text/main/data.txt?t=" + new Date().getTime();
+    $.get(githubUrl, function(data) {
+        console.log("Daten von GitHub:", data);
+        var values = data.split(",");
+        var revenue = parseFloat(values[0]);
+        var loss = parseFloat(values[1]);
+        var profit = revenue + loss;
+        console.log("Umsatz:", revenue);
+        console.log("Verlust:", loss);
+        console.log("Gewinn:", profit);
+        var maxValue = Math.max(Math.abs(revenue), Math.abs(loss), Math.abs(profit));
+        var duration = 3500;
+        animateValue("revenue", 0, revenue, duration);
+        animateValue("loss", 0, loss, duration);
+        animateValue("profit", 0, profit, duration);
+    }).fail(function() {
+        console.log("Fehler beim Laden der Daten von GitHub");
+    });
+}
+
+$(document).ready(function() {
+    updateData();
+});
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()});const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}();const i=document.querySelectorAll(".lazy");let c=!1;function a(){if(!c){c=!0;for(let e=0;e<i.length;e++){const t=i[e];if(t.getBoundingClientRect().top<=window.innerHeight&&t.getBoundingClientRect().bottom>=0&&getComputedStyle(t).display!=="none"){t.src=t.dataset.src,t.classList.remove("lazy");const o=()=>{t.removeEventListener("load",o),t.classList.add("loaded")};t.addEventListener("load",o)}}c=!1}}document.addEventListener("scroll",a),a()});
+    </script>
+</body>
+</html>
