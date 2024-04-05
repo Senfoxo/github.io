@@ -8,211 +8,12 @@
     <link rel="stylesheet" href="pandabuy.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .img-wrapper img{filter:grayscale(100%);transition:filter .5s ease}.img-wrapper img:hover{filter:grayscale(0%)}@keyframes fadeInUp{0%{opacity:0;transform:translateY(5em)}100%{opacity:1;transform:translateY(0)}}.img-wrapper{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}h1,h2{opacity:0;animation:fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s}nav ul{position:absolute;top:0;right:0;list-style-type:none;margin:0;padding:0;overflow:hidden}nav ul li{float:left}nav ul li a{display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none}nav ul li a:hover{color:rgba(255,255,255,.336)}
-        .animated-number {
-            font-size: 3em;
-        }
-        .green {
-            color: lightgreen;
-        }
-        .red {
-            color: lightcoral;
-        }
-        #art-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 20vh;
-        }
-        h3 {
-            opacity: 0;
-            animation: fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s;
-        }
-        h4 {
-            opacity: 0;
-            animation: fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s;
-        }
-        p {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-        }
-        .sales-container {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0);
-        }
-        .sales-item {
-            flex: 1 1 20%;
-            margin: 10px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 0, 128, 0.1);
-            background-color: rgba(0, 0, 0, 0);
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform .2s, box-shadow .2s, background-color .5s;
-            opacity: 0;
-            transform: translateY(3em);
-            animation: fadeInUp 2s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
-        }
-        .sales-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            background-color: rgba(255, 0, 128, 0.1);
-        }
-        .sales-section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 50px;
-            margin-top: -100px;
-        }
-        body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-}
-        .product-sell {
-            color: lightgreen;
-        }
-        .declarer-container {
-            cursor: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .declarer-box {
-            margin: 0 20px;
-            padding: 20px;
-            border: 1px solid rgba(0, 140, 255, 0.1);
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform .2s, box-shadow .2s, background-color .5s;
-            opacity: 0;
-            transform: translateY(3em);
-            animation: fadeInUp 2s cubic-bezier(0.19, 1, 0.22, 1) forwards 1s;
-            width: 500px;
-            display: flex;
-            align-items: flex-start;
-        }
-        .declarer-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            background-color: rgba(0, 140, 255, 0.1);
-        }
-        .declarer-box h3 {
-            margin-bottom: 10px;
-            text-align: left;
-            margin-left: 20px;
-            margin-right: 20px;  
-            margin-top: 20px; 
-        }
-        .declarer-box select, .declarer-box input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-right: 20px; 
-            margin-top: 15px; 
-        }
-        .declarer-box button {
-            cursor: none;
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0, 140, 255, 0.1);
-            border: none;
-            color: white;
-            transition: background-color .5s;
-            margin-right: 40px;
-            margin-top: 15px; 
-        }
-        .declarer-box button:hover {
-            background-color: rgba(0, 140, 255, 0.3);
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: rgba(0, 140, 255, 0.3);
-            text-align: center;
-            min-height: 30px;
-        }
-        .no-data {
-            color: rgba(255, 0, 0, 0.5);
-        }
-        .emoji {
-            font-size: 1.5em;
-            margin-right: 10px;
-        }
-        .custom-cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .cursor-point {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background-color: #fff;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
-            transition: transform 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33);
-            z-index: 9999;
-        }
-        .cursor-border {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            border: 1px solid #fff;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
-            transition: transform 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33);
-            z-index: 9998;
-        }
-        .custom-cursor, .cursor-point, .cursor-border {
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-        }
-
-        .no-data, .hint {
-            opacity: 0;
-            animation: fadeInUp 1.5s cubic-bezier(.19,1,.22,1) forwards 1s;
-        }
-
-        h1 {
-            font-size: 48px;
-        }
-        button {
-    font-family: poppins;
-    font-size: 10px;
-}
-    </style>
 </head>
 <body>
     <div class="custom-cursor">
         <div class="cursor-point"></div>
         <div class="cursor-border"></div>
-    </div>    
+    </div>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -222,7 +23,7 @@
         </ul>
     </nav>
     <div id="art-gallery">
-        <h1>Pandabuy Declarer</h1>
+        <h1 class="glitch" data-text="Pandabuy Declarer">Pandabuy Declarer</h1>
     </div>
     <div class="declarer-container">
         <div class="declarer-box">
@@ -256,7 +57,7 @@
         <div class="declarer-box">
             <h3>Weight</h3>
             <input type="number" id="weight" placeholder="Enter weight (g)">
-            <button onclick="calculate()">Calculate</button>
+            <button class="neon-button" onclick="calculate()">Calculate</button>
         </div>
     </div>
     <div id="result">
@@ -269,95 +70,101 @@
         Made With Love By Jisll <i class="fas fa-heart" style="color:#ff4949;"></i>
     </div>
     <script>
-function calculate() {
-    const shippingLine = document.getElementById('shippingLine').value;
-    const weight = parseInt(document.getElementById('weight').value);
-    let minDeclare, maxDeclare;
-
-            switch (shippingLine) {
-                case 'EUROPE TARIFFLESS LINE':
-                case 'EUROPE TARIFFLESS LINE (ACTUAL WEIGHT)':
-                case 'LINE F':
-                    minDeclare = 10.00;
-                    maxDeclare = 21.00;
-                    break;
-                case 'LINE M':
-                    minDeclare = 22.00;
-                    maxDeclare = 150.00;
-                    break;
-                case 'LINE B':
-                    minDeclare = 15.00;
-                    maxDeclare = 50.00;
-                    break;
-                case 'LINE Y':
-                    minDeclare = 30.00;
-                    maxDeclare = 150.00;
-                    break;
-                case 'CN LINE/EUROPE LINE':
-                    minDeclare = 1.00;
-                    maxDeclare = 24.00;
-                    break;
-                case 'CANADA':
-                    minDeclare = 0.00;
-                    maxDeclare = 14.00;
-                    break;
-                case 'USA':
-                case 'AUSTRALIA, NZ':
-                case 'PHILIPPINES':
-                    minDeclare = 0.00;
-                    maxDeclare = 135.00;
-                    break;
-                case 'UK':
-                    minDeclare = 0.00;
-                    maxDeclare = 135.00;
-                    break;
-                case 'UK LINE/B':
-                    minDeclare = 0.00;
-                    maxDeclare = 17.90;
-                    break;
-                case 'FRANCE':
-                case 'ITALY':
-                case 'SWEDEN':
-                case 'ROMANIA':
-                case 'GREECE':
-                    minDeclare = 16.00;
-                    maxDeclare = 21.00;
-                    break;
-                case 'SPAIN':
-                    minDeclare = 16.00;
-                    maxDeclare = 150.00;
-                    break;
-                case 'JAPAN':
-                    minDeclare = 0.00;
-                    maxDeclare = 70.00;
-                    break;
-                case 'KOREA':
-                    minDeclare = 0.00;
-                    maxDeclare = 110.00;
-                    break;
-                case 'THAILAND':
-                    minDeclare = 0.00;
-                    maxDeclare = 41.00;
-                    break;
-                case 'UAE':
-                    minDeclare = 0.00;
-                    maxDeclare = 80.00;
-                    break;
+        function calculate() {
+            const shippingLine = document.getElementById('shippingLine').value;
+            const weight = parseInt(document.getElementById('weight').value);
+            let minDeclare, maxDeclare;
+        
+                    switch (shippingLine) {
+                        case 'EUROPE TARIFFLESS LINE':
+                        case 'EUROPE TARIFFLESS LINE (ACTUAL WEIGHT)':
+                        case 'LINE F':
+                            minDeclare = 10.00;
+                            maxDeclare = 21.00;
+                            break;
+                        case 'LINE M':
+                            minDeclare = 22.00;
+                            maxDeclare = 150.00;
+                            break;
+                        case 'LINE B':
+                            minDeclare = 15.00;
+                            maxDeclare = 50.00;
+                            break;
+                        case 'LINE Y':
+                            minDeclare = 30.00;
+                            maxDeclare = 150.00;
+                            break;
+                        case 'CN LINE/EUROPE LINE':
+                            minDeclare = 1.00;
+                            maxDeclare = 24.00;
+                            break;
+                        case 'CANADA':
+                            minDeclare = 0.00;
+                            maxDeclare = 14.00;
+                            break;
+                        case 'USA':
+                        case 'AUSTRALIA, NZ':
+                        case 'PHILIPPINES':
+                            minDeclare = 0.00;
+                            maxDeclare = 135.00;
+                            break;
+                        case 'UK':
+                            minDeclare = 0.00;
+                            maxDeclare = 135.00;
+                            break;
+                        case 'UK LINE/B':
+                            minDeclare = 0.00;
+                            maxDeclare = 17.90;
+                            break;
+                        case 'FRANCE':
+                        case 'ITALY':
+                        case 'SWEDEN':
+                        case 'ROMANIA':
+                        case 'GREECE':
+                            minDeclare = 16.00;
+                            maxDeclare = 21.00;
+                            break;
+                        case 'SPAIN':
+                            minDeclare = 16.00;
+                            maxDeclare = 150.00;
+                            break;
+                        case 'JAPAN':
+                            minDeclare = 0.00;
+                            maxDeclare = 70.00;
+                            break;
+                        case 'KOREA':
+                            minDeclare = 0.00;
+                            maxDeclare = 110.00;
+                            break;
+                        case 'THAILAND':
+                            minDeclare = 0.00;
+                            maxDeclare = 41.00;
+                            break;
+                        case 'UAE':
+                            minDeclare = 0.00;
+                            maxDeclare = 80.00;
+                            break;
+                    }
+        
+                    const randomOffset = Math.random() * 10 - 5;
+            const declareValue = Math.max(minDeclare, Math.min(maxDeclare, weight / 100 + randomOffset)).toFixed(2);
+        
+            const resultElement = document.getElementById('result');
+            if (isNaN(weight)) {
+                resultElement.innerHTML = '<span class="no-data">No Data! Please calculate your parcel! 📦</span>';
+            } else {
+                resultElement.innerHTML = `Declare Value: $${declareValue}`;
             }
-
-            const randomOffset = Math.random() * 10 - 5;
-    const declareValue = Math.max(minDeclare, Math.min(maxDeclare, weight / 100 + randomOffset)).toFixed(2);
-
-    const resultElement = document.getElementById('result');
-    if (isNaN(weight)) {
-        resultElement.innerHTML = '<span class="no-data">No Data! Please calculate your parcel! 📦</span>';
-    } else {
-        resultElement.innerHTML = `Declare Value: $${declareValue}`;
-    }
-}
-    </script>
+        }
+            </script>
     <script>
         document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()});const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}();const i=document.querySelectorAll(".lazy");let c=!1;function a(){if(!c){c=!0;for(let e=0;e<i.length;e++){const t=i[e];if(t.getBoundingClientRect().top<=window.innerHeight&&t.getBoundingClientRect().bottom>=0&&getComputedStyle(t).display!=="none"){t.src=t.dataset.src,t.classList.remove("lazy");const o=()=>{t.removeEventListener("load",o),t.classList.add("loaded")};t.addEventListener("load",o)}}c=!1}}document.addEventListener("scroll",a),a()});
-    </script>
+</script>
+<script>
+    document.querySelector('.declarer-box select').addEventListener('click', function() {
+    this.style.backgroundColor = '#1a1a1a';
+});
+
+</script>
 </body>
 </html>
