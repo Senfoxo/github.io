@@ -8,19 +8,96 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <style>
-        nav ul{position:absolute;top:0;right:0;list-style-type:none;margin:0;padding:0;overflow:hidden}nav ul li{float:left}nav ul li a{display:block;color:#fff;text-align:center;padding:14px 16px;text-decoration:none}nav ul li a:hover{color:rgba(255,255,255,.336)}
         p {font-family: 'Poppins', sans-serif;
         font-weight: 300;}
-        .fact p {
-         font-family: 'Poppins', sans-serif;
-         font-weight: 300;
-         overflow: hidden;
-         border-right: .15em solid rgb(255, 255, 255);
-         white-space: nowrap;
-         margin: 0 auto;
-         letter-spacing: .15em;
-         transition: color 0.3s ease-in-out;
-        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.loader div {
+    background: rgb(228, 228, 228);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: 0.2em;
+    animation: anim 2s infinite linear;
+    animation-delay: calc(-0.3s * var(--i));
+}
+
+@keyframes anim {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.next-update {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 2s infinite;
+}
+
+@keyframes fadeIn {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.whats-new {
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.whats-new ul {
+    list-style: none;
+    padding: 0;
+    display: block;
+}
+
+.whats-new li:before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.FONTS-ST {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.FONTS-S {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
     </style>
 </head>
 <body>
@@ -30,95 +107,52 @@
     </div>    
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="specs.html">Specs</a></li>
         </ul>
     </nav>
     <section class="main">
-        <img src="assets/imgs/jisll.png" alt="Jisll">
-        <span>Jisll</span>
-        <p>Front-End & Back-End Developer</p>
-        <ul>
-            <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
-            <li><a target="_blank" href="https://github.com/Jisll"><i class="fab fa-github"></i></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-        <div class="fact">
-            <p></p>
-        </div>              
+        <div class="loader-container">
+            <div class="loader">
+                <div style="--i: 1"></div>
+                <div style="--i: 2"></div>
+                <div style="--i: 3"></div>
+                <div style="--i: 4"></div>
+            </div>
+            <p class="next-update">Next Update Coming Soon...</p>
+            <p id="countdown"></p>
+            <div class="whats-new">
+                <p class="FONTS-ST">What's New?</p>
+                <ul>
+                    <p class="FONTS-S">🔥 New Features Added</p>
+                    <p class="FONTS-S">🚀 Improved Performance</p>
+                    <p class="FONTS-S">✨ Modern Design</p>
+                    <p class="FONTS-S">🔐 Increased Security</p>
+                    <p class="FONTS-S">🌐 Global Reachability</p>
+                </ul>
+            </div>            
+        </div>
     </section>
     <div class="made-with-love">
         Made With Love By Jisll <i class="fas fa-heart" style="color:#ff4949;"></i>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()}),window.addEventListener("scroll",()=>window.scrollTo(0,0)),document.body.style.overflow="hidden";const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}(),document.querySelectorAll("img").forEach(e=>{e.addEventListener("dragstart",e=>e.preventDefault())});const i = [
-"This website is hotter than a server room at full capacity… 😏",
-"I’m a delightful blend of 🇨🇿 Czech and 🇩🇪 German cultures.",
-"Ada Lovelace, the original code wizard. 👩‍💻",
-"1983: The year when software caught a cold. 🦠",
-"Binary: It’s a two-way street, you’re either in or you’re out. 🌐",
-"FORTRAN: The granddaddy of programming languages. 💻",
-"The first ‘bug’ was more of a ‘flutter’. 🐜",
-"C language: The cornerstone of modern coding. 📚",
-"Python: A language that gives you a giggle. 🐍",
-"Java: The Marty McFly of its era. ☕",
-"www.symbolics.com: The Neil Armstrong of domain names. 🌐",
-"70% of virus creators are moonlighting for the mob. 🕵️‍♂️",
-"CAPTCHA: The bouncer of the internet. 🤖",
-"Computer users: The staring contest champions. 👀",
-"570+ new corners of the web spun every minute. 🌐",
-"4004: The tiny chip that started a big revolution. 🧠",
-"1.5 billion internet explorers. 🌐",
-"First 1GB hard disk: Weighed more than a baby elephant and cost a small fortune. 💾",
-"GeForce 6800 Ultra: The Usain Bolt of graphics cards. 🎮",
-"First Apple computer: The tech equivalent of Frankenstein’s monster! 🍎",
-"1 Byte = 8 bits. It’s a byte-sized fact! 💿",
-"1 KB = 1024 Bytes. A kilo-byte to bite on. 💿",
-"1 MB = 1024 KB. Mega bytes, mega fun. 💿",
-"1 GB = 1024 MB. Giga bytes, giga possibilities. 💿",
-"1 TB = 1024 GB. A tera-byte of awesomeness. 💿",
-"SQL Injection: The bad kind of shot. 💉",
-"DDoS attack: The internet’s version of a traffic jam. 🌐",
-"Firewall: The bouncer of your computer. 🔥",
-"VPN: The master of disguise. 🎭",
-"Darknet: The internet’s shadowy alleyways. 🕵️‍♂️",
-"Phishing: The con artists of the cyber world. 🎣",
-"Ransomware: The digital hostage-taker. 💰",
-"Malware: The wrecking ball of the digital world. 🦠",
-"Cryptocurrency: The gold rush of the 21st century. 💱",
-"Blockchain: The digital ledger that never lies. 🔗",
-"Big Data: The treasure trove of the digital age. 📊",
-"AI: The brainchild of human intelligence. 🧠",
-"Machine Learning: The crystal ball of software. 🤖",
-"Deep Learning: AI’s deep dive into data. 🧠",
-"Neural Network: The brain’s doppelganger. 🧠",
-"IoT: The invisible threads connecting the world. 🌐",
-"AR: Reality, but better. 👓",
-"VR: Your personal holodeck. 🕶️",
-"Quantum Computing: Harnessing the power of atoms. ⚛️",
-"Grace Hopper: The mother of the compiler. 👩‍💻",
-"Alan Turing: The godfather of computer science. 🧠",
-"ASCII: The Rosetta Stone of computers. 🔡",
-"Unicode: The Babel Fish of the digital world. 🌐",
-"Open Source: Many hands make light work. 🤝",
-"Linus Torvalds: The man who penguin-powered the internet. 🐧",
-"GitHub: The coder’s social network. 🐙",
-"Stack Overflow: The coder’s distress signal. 💡",
-"Raspberry Pi: The computer that fits in your pocket. 💳",
-"Arduino: The DIYer’s best friend. 🤖",
-"Elon Musk: The rocket man of coding. 🚀",
-"Bill Gates: The whizz kid of software. 💻",
-"Ada Lovelace: The visionary of programming. 👩‍🔬",
-"Margaret Hamilton: The woman who took us to the moon. 🌙",
-"Grace Hopper: The woman who taught computers to understand humans. 🖥️",
-"COBOL: The language that means business. 💼",
-"Fortran: The language that started it all. 🔢",
-"Lisp: The elder statesman of coding languages. 🔗",
-"BASIC: The ABCs of coding. 🔤",
-"Pascal: The language that tips its hat to a mathematical genius. ⚖️",
-"Current Specs: i5 10400F, RTX 4070 S, 32GB, 1TB SSD, 4TB HDD. The beast of a machine! 🖥️"
-];c=document.querySelector(".fact p");function a(){let e=Math.floor(Math.random()*i.length);c.textContent=i[e]}function l(){c.style.animation="none",c.offsetHeight,c.style.animation="typewriter 10s cubic-bezier(0.22, 1, 0.36, 1) infinite, blinkTextCursor 530ms infinite normal"}function d(){a(),l()}setInterval(d,9800),d()});
+var countDownDate = new Date("May 18, 2024 00:00:00").getTime();
+var countdownfunction = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(countdownfunction);
+    document.getElementById("countdown").innerHTML = "Update Soon!";
+  }
+}, 1000);
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){document.addEventListener("selectstart",e=>e.preventDefault()),document.addEventListener("contextmenu",e=>e.preventDefault()),document.addEventListener("keydown",e=>{(123==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode||e.ctrlKey&&85==e.keyCode)&&e.preventDefault()}),window.addEventListener("scroll",()=>window.scrollTo(0,0)),document.body.style.overflow="hidden";const e=document.querySelector(".cursor-point"),t=document.querySelector(".cursor-border");let o=0,n=0,r=0,s=0;document.addEventListener("mousemove",t=>{o=t.clientX,n=t.clientY,e.style.left=o+"px",e.style.top=n+"px"}),function e(){r+=.05*(o-r),s+=.05*(n-s),t.style.left=`${r}px`,t.style.top=`${s}px`,requestAnimationFrame(e)}(),document.querySelectorAll("img").forEach(e=>{e.addEventListener("dragstart",e=>e.preventDefault())});})
+        </script>
 </body>
 </html>
