@@ -24,95 +24,6 @@
             letter-spacing: .15em;
             transition: color 0.3s ease-in-out;
         }
-
-        .nab_wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: linear-gradient(135deg, #111111 0%, #080808 100%);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .nab_card {
-            max-width: 500px;
-            width: 90%;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            font-family: 'Arial', sans-serif;
-            background: #131313;
-            text-align: center;
-            color: white;
-            animation: slideIn 1s ease-in-out;
-        }
-
-        .nab_title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff4848;
-            margin-bottom: 10px;
-            display: block;
-            animation: titlePulse 1.5s infinite;
-        }
-
-        .nab_desc {
-            font-size: 16px;
-            color: #ddd;
-            line-height: 1.5;
-            opacity: 0.8;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .blink_exclamation {
-            font-size: 48px;
-            color: #FF0000;
-            display: block;
-            margin-bottom: 10px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes blink {
-
-            0%,
-            40%,
-            100% {
-                opacity: 1;
-            }
-
-            20%,
-            60% {
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 
@@ -126,11 +37,9 @@
         <span>Jisll</span>
         <p>Front-End & Back-End Developer</p>
         <ul>
-            <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i
-                        class="fab fa-discord"></i></a></li>
+            <li><a target="_blank" href="https://discordapp.com/users/789339121759551509"><i class="fab fa-discord"></i></a></li>
             <li><a target="_blank" href="https://github.com/Jisll"><i class="fab fa-github"></i></a></li>
-            <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i
-                        class="fab fa-youtube"></i></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/channel/UCDkT7vpO3uutNMEg84QOIRA"><i class="fab fa-youtube"></i></a></li>
         </ul>
         <div class="fact">
             <p></p>
@@ -202,133 +111,171 @@
             updateFact();
         });
     </script>
-    <script>
-        var fFlag = false;
-        
-        function checkAdblock() {
-            fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD' })
-                .then(response => {
-                    if (!response.ok) {
-                        adblockDetected();
-                    }
-                })
-                .catch(adblockDetected);
+<script>
+    var fFlag = false;
 
-            const testElements = [
-                { className: 'adsbox', styles: { width: '1px', height: '1px' } },
-                { className: 'ad', styles: { width: '1px', height: '1px' } },
-                { className: 'advertisement', styles: { width: '1px', height: '1px' } }
-            ];
+    var nab_css = `
+    .nab_wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 100%);
+        z-index: 9999;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .nab_loading {
+        width: 60px;
+        height: 60px;
+        border: 8px solid rgba(255, 255, 255, 0.1);
+        border-top: 8px solid #ff5252;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    .nab_card {
+        max-width: 400px;
+        width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #1b1b1b, #222);
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        animation: slideIn 1s ease-in-out;
+    }
+    .nab_exclamation {
+        font-size: 60px;
+        color: #ff5252;
+        margin-bottom: 10px;
+        animation: smoothBlink 2s infinite;
+    }
+    .nab_title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff5252;
+        margin-bottom: 10px;
+    }
+    .nab_desc {
+        font-size: 16px;
+        color: #ccc;
+        line-height: 1.4;
+        margin-top: 10px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideIn {
+        from { transform: translateY(-30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes smoothBlink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0.5; }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    `;
 
-            testElements.forEach(element => {
-                const testEl = document.createElement('div');
-                testEl.className = element.className;
-                Object.assign(testEl.style, element.styles, { position: 'absolute', left: '-9999px' });
-                document.body.appendChild(testEl);
+    var nab_loading_html = `
+        <div class="nab_wrapper">
+            <div class="nab_loading"></div>
+        </div>
+    `;
 
-                setTimeout(() => {
-                    if (!document.body.contains(testEl) || window.getComputedStyle(testEl).display === 'none' || window.getComputedStyle(testEl).visibility === 'hidden') {
-                        adblockDetected();
-                    }
-                    document.body.removeChild(testEl);
-                }, 1500);
-            });
+    var nab_html = `
+        <div class="nab_wrapper">
+            <div class="nab_card">
+                <div class="nab_exclamation">⚠️</div>
+                <div class="nab_title">Please Disable Your Adblock</div>
+                <div class="nab_desc">Please disable your Adblocker to access this website.
+                Make sure your browser does not block ads. If you see this message again, use a different browser.</div>
+            </div>
+        </div>
+    `;
 
-            const adblockExtensions = [
-                "uBlock", "AdblockPlus", "Adblock", "AdGuard",
-                "Ghostery", "PrivacyBadger", "AdsByGoogle",
-                "StopAdBlock", "BlockAdBlock"
-            ];
+    function checkF() {
+        if (!fFlag) {
+            fFlag = true;
+            setTimeout(function(){
+                var styleTag = document.createElement('style');
+                styleTag.textContent = nab_css;
+                document.head.appendChild(styleTag);
+                document.body.innerHTML = nab_loading_html;
+                setTimeout(function() {
+                    document.body.innerHTML = nab_html;
+                }, 2000);
+                console.log('Adblock detected');
+            }, 1000);
+        }
+    }
 
-            adblockExtensions.forEach(extension => {
-                if (typeof window[extension] !== 'undefined') {
-                    adblockDetected();
-                }
-            });
+    function detectAdblock() {
+        fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD' })
+            .then(function(response) {
+                if (!response.ok) checkF();
+            })
+            .catch(checkF);
 
-            const adIframes = ['iframe[src*="ads"]', 'iframe[id*="google_ads"]'];
-            if (adIframes.every(selector => document.querySelectorAll(selector).length === 0)) {
-                adblockDetected();
+        // Method 2:
+        var testEl = document.createElement('div');
+        testEl.className = 'ads';
+        document.body.appendChild(testEl);
+        setTimeout(function() {
+            var testElStyle = window.getComputedStyle(testEl);
+            if (testElStyle.display === 'none' || testElStyle.visibility === 'hidden') checkF();
+            if (document.body.contains(testEl)) {
+                document.body.removeChild(testEl);
+            } else {
+                checkF();
             }
+        }, 1500);
 
-            if (typeof window.BlockAdBlock !== 'undefined' || typeof window.AdBlock !== 'undefined') {
-                adblockDetected();
+        // Method 3:
+        if (typeof window.AdblockPlus !== 'undefined' ||
+            typeof window.uBlockOrigin !== 'undefined' ||
+            typeof window.AdGuard !== 'undefined' ||
+            typeof window.adblock !== 'undefined') {
+            checkF();
+        }
+
+        // Method 4:
+        var bait = document.createElement('div');
+        bait.innerHTML = '&nbsp;';
+        bait.className = 'adsbox';
+        document.body.appendChild(bait);
+        window.setTimeout(function() {
+            if (bait.offsetHeight === 0) checkF();
+            document.body.removeChild(bait);
+        }, 100);
+
+        // Method 5:
+        var adTest = document.createElement('div');
+        adTest.className = 'ad-banner';
+        document.body.appendChild(adTest);
+        setTimeout(function() {
+            var adTestStyle = window.getComputedStyle(adTest);
+            if (adTestStyle.display === 'none' || adTestStyle.visibility === 'hidden') checkF();
+            if (document.body.contains(adTest)) {
+                document.body.removeChild(adTest);
+            } else {
+                checkF();
             }
-        }
+        }, 1500);
+    }
 
-        function adblockDetected() {
-            if (!fFlag) {
-                fFlag = true;
-                logAdblockDetection();
-                setTimeout(() => {
-                    const nabWrapper = document.createElement('div');
-                    nabWrapper.className = 'nab_wrapper';
+    document.addEventListener('DOMContentLoaded', detectAdblock);
+    window.addEventListener('load', detectAdblock);
+</script>
 
-                    const nabCard = document.createElement('div');
-                    nabCard.className = 'nab_card';
-
-                    const blinkExclamation = document.createElement('span');
-                    blinkExclamation.className = 'blink_exclamation';
-                    blinkExclamation.innerText = '⚠️';
-
-                    const nabTitle = document.createElement('span');
-                    nabTitle.className = 'nab_title';
-                    nabTitle.innerText = getLocalizedMessage('title');
-
-                    const nabDesc = document.createElement('span');
-                    nabDesc.className = 'nab_desc';
-                    nabDesc.innerHTML = getLocalizedMessage('description');
-
-                    nabCard.appendChild(blinkExclamation);
-                    nabCard.appendChild(nabTitle);
-                    nabCard.appendChild(nabDesc);
-                    nabWrapper.appendChild(nabCard);
-                    document.body.innerHTML = '';
-                    document.body.appendChild(nabWrapper);
-                }, 1000);
-            }
-        }
-
-        function getLocalizedMessage(type) {
-            const messages = {
-                en: {
-                    title: 'Please Disable Your Adblock',
-                    description: 'Please disable your Adblocker to access this website.<br>Make sure your browser does not block ads. If you see this message again, use a different browser.'
-                },
-                de: {
-                    title: 'Bitte deaktivieren Sie Ihren Adblocker',
-                    description: 'Bitte deaktivieren Sie Ihren Adblocker, um auf diese Website zuzugreifen.<br>Stellen Sie sicher, dass Ihr Browser keine Anzeigen blockiert. Wenn Sie diese Nachricht erneut sehen, verwenden Sie einen anderen Browser.'
-                },
-                fr: {
-                    title: 'Veuillez désactiver votre Adblock',
-                    description: 'Veuillez désactiver votre bloqueur de publicités pour accéder à ce site Web.<br>Assurez-vous que votre navigateur ne bloque pas les publicités. Si vous voyez ce message à nouveau, utilisez un autre navigateur.'
-                },
-                es: {
-                    title: 'Por favor desactiva tu Adblock',
-                    description: 'Por favor desactiva tu bloqueador de anuncios para acceder a este sitio web.<br>Asegúrate de que tu navegador no bloquee los anuncios. Si ves este mensaje de nuevo, usa otro navegador.'
-                },
-                it: {
-                    title: 'Si prega di disattivare Adblock',
-                    description: 'Si prega di disattivare il tuo blocco annunci per accedere a questo sito web.<br>Assicurati che il tuo browser non blocchi gli annunci. Se vedi di nuovo questo messaggio, usa un altro browser.'
-                },
-                pt: {
-                    title: 'Por favor, desative o Adblock',
-                    description: 'Por favor, desative o bloqueador de anúncios para acessar este site.<br>Certifique-se de que seu navegador não bloqueie anúncios. Se você vir esta mensagem novamente, use outro navegador.'
-                },
-                // here you add more languages kiwi
-            };
-
-            const userLang = navigator.language || navigator.userLanguage;
-            const lang = userLang.split('-')[0];
-
-            return messages[lang] ? messages[lang][type] : messages['en'][type];
-        }
-
-        function logAdblockDetection() {
-            console.log("Adblock detected on " + new Date().toLocaleString());
-        }
-        checkAdblock();
-    </script>
 </body>
 
 </html>
