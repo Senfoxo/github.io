@@ -218,16 +218,22 @@
         }
     }
 
+    function isOperaGX() {
+        var userAgent = navigator.userAgent;
+        return userAgent.includes('OPR') && userAgent.includes('Opera GX');
+    }
+
     function detectAdblock() {
+        // Method 1: Fetch request
         fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD' })
             .then(function(response) {
                 if (!response.ok) checkF();
             })
             .catch(checkF);
 
-        // Method 2:
+        // Method 2: Check for specific CSS class blocking
         var testEl = document.createElement('div');
-        testEl.className = 'ads';
+        testEl.className = 'ads ad-banner ad-unit ad-zone ad-space';
         document.body.appendChild(testEl);
         setTimeout(function() {
             var testElStyle = window.getComputedStyle(testEl);
@@ -239,7 +245,7 @@
             }
         }, 1500);
 
-        // Method 3:
+        // Method 3: Check for common adblocker objects
         if (typeof window.AdblockPlus !== 'undefined' ||
             typeof window.uBlockOrigin !== 'undefined' ||
             typeof window.AdGuard !== 'undefined' ||
@@ -247,7 +253,7 @@
             checkF();
         }
 
-        // Method 4:
+        // Method 4: Bait element
         var bait = document.createElement('div');
         bait.innerHTML = '&nbsp;';
         bait.className = 'adsbox';
@@ -257,9 +263,9 @@
             document.body.removeChild(bait);
         }, 100);
 
-        // Method 5:
+        // Method 5: Bait element with different class name
         var adTest = document.createElement('div');
-        adTest.className = 'ad-banner';
+        adTest.className = 'ad-banner ad-test';
         document.body.appendChild(adTest);
         setTimeout(function() {
             var adTestStyle = window.getComputedStyle(adTest);
@@ -270,6 +276,25 @@
                 checkF();
             }
         }, 1500);
+
+        // Method 6: Additional bait element with ID
+        var adTestID = document.createElement('div');
+        adTestID.id = 'ad-banner';
+        document.body.appendChild(adTestID);
+        setTimeout(function() {
+            var adTestIDStyle = window.getComputedStyle(adTestID);
+            if (adTestIDStyle.display === 'none' || adTestIDStyle.visibility === 'hidden') checkF();
+            if (document.body.contains(adTestID)) {
+                document.body.removeChild(adTestID);
+            } else {
+                checkF();
+            }
+        }, 1500);
+
+        // Additional Method: Check for Opera GX
+        if (isOperaGX()) {
+            checkF();
+        }
     }
 
     document.addEventListener('DOMContentLoaded', detectAdblock);
