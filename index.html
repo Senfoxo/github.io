@@ -24,6 +24,95 @@
             letter-spacing: .15em;
             transition: color 0.3s ease-in-out;
         }
+
+        .nab_wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #111111 0%, #080808 100%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .nab_card {
+            max-width: 500px;
+            width: 90%;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            font-family: 'Arial', sans-serif;
+            background: #131313;
+            text-align: center;
+            color: white;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .nab_title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4848;
+            margin-bottom: 10px;
+            display: block;
+            animation: titlePulse 1.5s infinite;
+        }
+
+        .nab_desc {
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.5;
+            opacity: 0.8;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .blink_exclamation {
+            font-size: 48px;
+            color: #FF0000;
+            display: block;
+            margin-bottom: 10px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            40%,
+            100% {
+                opacity: 1;
+            }
+
+            20%,
+            60% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -88,68 +177,6 @@
             const facts = [
                 "This website is hotter than a server room at full capacity… 😏",
                 "I'm a delightful blend of 🇨🇿 Czech and 🇩🇪 German cultures.",
-                "Ada Lovelace, the original code wizard. 👩‍💻",
-                "1983: The year when software caught a cold. 🦠",
-                "Binary: It's a two-way street, you're either in or you're out. 🌐",
-                "FORTRAN: The granddaddy of programming languages. 💻",
-                "The first 'bug' was more of a 'flutter'. 🐜",
-                "C language: The cornerstone of modern coding. 📚",
-                "Python: A language that gives you a giggle. 🐍",
-                "Java: The Marty McFly of its era. ☕",
-                "www.symbolics.com: The Neil Armstrong of domain names. 🌐",
-                "70% of virus creators are moonlighting for the mob. 🕵️‍♂️",
-                "CAPTCHA: The bouncer of the internet. 🤖",
-                "Computer users: The staring contest champions. 👀",
-                "570+ new corners of the web spun every minute. 🌐",
-                "4004: The tiny chip that started a big revolution. 🧠",
-                "1.5 billion internet explorers. 🌐",
-                "First 1GB hard disk: Weighed more than a baby elephant and cost a small fortune. 💾",
-                "GeForce 6800 Ultra: The Usain Bolt of graphics cards. 🎮",
-                "First Apple computer: The tech equivalent of Frankenstein's monster! 🍎",
-                "1 Byte = 8 bits. It's a byte-sized fact! 💿",
-                "1 KB = 1024 Bytes. A kilo-byte to bite on. 💿",
-                "1 MB = 1024 KB. Mega bytes, mega fun. 💿",
-                "1 GB = 1024 MB. Giga bytes, giga possibilities. 💿",
-                "1 TB = 1024 GB. A tera-byte of awesomeness. 💿",
-                "SQL Injection: The bad kind of shot. 💉",
-                "DDoS attack: The internet's version of a traffic jam. 🌐",
-                "Firewall: The bouncer of your computer. 🔥",
-                "VPN: The master of disguise. 🎭",
-                "Darknet: The internet's shadowy alleyways. 🕵️‍♂️",
-                "Phishing: The con artists of the cyber world. 🎣",
-                "Ransomware: The digital hostage-taker. 💰",
-                "Malware: The wrecking ball of the digital world. 🦠",
-                "Cryptocurrency: The gold rush of the 21st century. 💱",
-                "Blockchain: The digital ledger that never lies. 🔗",
-                "Big Data: The treasure trove of the digital age. 📊",
-                "AI: The brainchild of human intelligence. 🧠",
-                "Machine Learning: The crystal ball of software. 🤖",
-                "Deep Learning: AI's deep dive into data. 🧠",
-                "Neural Network: The brain's doppelganger. 🧠",
-                "IoT: The invisible threads connecting the world. 🌐",
-                "AR: Reality, but better. 👓",
-                "VR: Your personal holodeck. 🕶️",
-                "Quantum Computing: Harnessing the power of atoms. ⚛️",
-                "Grace Hopper: The mother of the compiler. 👩‍💻",
-                "Alan Turing: The godfather of computer science. 🧠",
-                "ASCII: The Rosetta Stone of computers. 🔡",
-                "Unicode: The Babel Fish of the digital world. 🌐",
-                "Open Source: Many hands make light work. 🤝",
-                "Linus Torvalds: The man who penguin-powered the internet. 🐧",
-                "GitHub: The coder's social network. 🐙",
-                "Stack Overflow: The coder's distress signal. 💡",
-                "Raspberry Pi: The computer that fits in your pocket. 💳",
-                "Arduino: The DIYer's best friend. 🤖",
-                "Elon Musk: The rocket man of coding. 🚀",
-                "Bill Gates: The whizz kid of software. 💻",
-                "Ada Lovelace: The visionary of programming. 👩‍🔬",
-                "Margaret Hamilton: The woman who took us to the moon. 🌙",
-                "Grace Hopper: The woman who taught computers to understand humans. 🖥️",
-                "COBOL: The language that means business. 💼",
-                "Fortran: The language that started it all. 🔢",
-                "Lisp: The elder statesman of coding languages. 🔗",
-                "BASIC: The ABCs of coding. 🔤",
-                "Pascal: The language that tips its hat to a mathematical genius. ⚖️",
                 "Current Specs: i5 10400F, RTX 4070 S, 32GB, 1TB SSD, 4TB HDD. The beast of a machine! 🖥️"
             ];
 
@@ -174,6 +201,133 @@
             setInterval(updateFact, 9800);
             updateFact();
         });
+    </script>
+    <script>
+        var fFlag = false;
+        
+        function checkAdblock() {
+            fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD' })
+                .then(response => {
+                    if (!response.ok) {
+                        adblockDetected();
+                    }
+                })
+                .catch(adblockDetected);
+
+            const testElements = [
+                { className: 'adsbox', styles: { width: '1px', height: '1px' } },
+                { className: 'ad', styles: { width: '1px', height: '1px' } },
+                { className: 'advertisement', styles: { width: '1px', height: '1px' } }
+            ];
+
+            testElements.forEach(element => {
+                const testEl = document.createElement('div');
+                testEl.className = element.className;
+                Object.assign(testEl.style, element.styles, { position: 'absolute', left: '-9999px' });
+                document.body.appendChild(testEl);
+
+                setTimeout(() => {
+                    if (!document.body.contains(testEl) || window.getComputedStyle(testEl).display === 'none' || window.getComputedStyle(testEl).visibility === 'hidden') {
+                        adblockDetected();
+                    }
+                    document.body.removeChild(testEl);
+                }, 1500);
+            });
+
+            const adblockExtensions = [
+                "uBlock", "AdblockPlus", "Adblock", "AdGuard",
+                "Ghostery", "PrivacyBadger", "AdsByGoogle",
+                "StopAdBlock", "BlockAdBlock"
+            ];
+
+            adblockExtensions.forEach(extension => {
+                if (typeof window[extension] !== 'undefined') {
+                    adblockDetected();
+                }
+            });
+
+            const adIframes = ['iframe[src*="ads"]', 'iframe[id*="google_ads"]'];
+            if (adIframes.every(selector => document.querySelectorAll(selector).length === 0)) {
+                adblockDetected();
+            }
+
+            if (typeof window.BlockAdBlock !== 'undefined' || typeof window.AdBlock !== 'undefined') {
+                adblockDetected();
+            }
+        }
+
+        function adblockDetected() {
+            if (!fFlag) {
+                fFlag = true;
+                logAdblockDetection();
+                setTimeout(() => {
+                    const nabWrapper = document.createElement('div');
+                    nabWrapper.className = 'nab_wrapper';
+
+                    const nabCard = document.createElement('div');
+                    nabCard.className = 'nab_card';
+
+                    const blinkExclamation = document.createElement('span');
+                    blinkExclamation.className = 'blink_exclamation';
+                    blinkExclamation.innerText = '⚠️';
+
+                    const nabTitle = document.createElement('span');
+                    nabTitle.className = 'nab_title';
+                    nabTitle.innerText = getLocalizedMessage('title');
+
+                    const nabDesc = document.createElement('span');
+                    nabDesc.className = 'nab_desc';
+                    nabDesc.innerHTML = getLocalizedMessage('description');
+
+                    nabCard.appendChild(blinkExclamation);
+                    nabCard.appendChild(nabTitle);
+                    nabCard.appendChild(nabDesc);
+                    nabWrapper.appendChild(nabCard);
+                    document.body.innerHTML = '';
+                    document.body.appendChild(nabWrapper);
+                }, 1000);
+            }
+        }
+
+        function getLocalizedMessage(type) {
+            const messages = {
+                en: {
+                    title: 'Please Disable Your Adblock',
+                    description: 'Please disable your Adblocker to access this website.<br>Make sure your browser does not block ads. If you see this message again, use a different browser.'
+                },
+                de: {
+                    title: 'Bitte deaktivieren Sie Ihren Adblocker',
+                    description: 'Bitte deaktivieren Sie Ihren Adblocker, um auf diese Website zuzugreifen.<br>Stellen Sie sicher, dass Ihr Browser keine Anzeigen blockiert. Wenn Sie diese Nachricht erneut sehen, verwenden Sie einen anderen Browser.'
+                },
+                fr: {
+                    title: 'Veuillez désactiver votre Adblock',
+                    description: 'Veuillez désactiver votre bloqueur de publicités pour accéder à ce site Web.<br>Assurez-vous que votre navigateur ne bloque pas les publicités. Si vous voyez ce message à nouveau, utilisez un autre navigateur.'
+                },
+                es: {
+                    title: 'Por favor desactiva tu Adblock',
+                    description: 'Por favor desactiva tu bloqueador de anuncios para acceder a este sitio web.<br>Asegúrate de que tu navegador no bloquee los anuncios. Si ves este mensaje de nuevo, usa otro navegador.'
+                },
+                it: {
+                    title: 'Si prega di disattivare Adblock',
+                    description: 'Si prega di disattivare il tuo blocco annunci per accedere a questo sito web.<br>Assicurati che il tuo browser non blocchi gli annunci. Se vedi di nuovo questo messaggio, usa un altro browser.'
+                },
+                pt: {
+                    title: 'Por favor, desative o Adblock',
+                    description: 'Por favor, desative o bloqueador de anúncios para acessar este site.<br>Certifique-se de que seu navegador não bloqueie anúncios. Se você vir esta mensagem novamente, use outro navegador.'
+                },
+                // here you add more languages kiwi
+            };
+
+            const userLang = navigator.language || navigator.userLanguage;
+            const lang = userLang.split('-')[0];
+
+            return messages[lang] ? messages[lang][type] : messages['en'][type];
+        }
+
+        function logAdblockDetection() {
+            console.log("Adblock detected on " + new Date().toLocaleString());
+        }
+        checkAdblock();
     </script>
 </body>
 
